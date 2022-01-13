@@ -9,10 +9,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 if 'win' in sys.platform.lower():
     swfrender = os.path.join(BASE_DIR, 'bin', 'swfrender.exe')
-    NULL = '1>nul 2>nul'
+    NULL = '1>nul 2>&1'
 elif 'linux' in sys.platform.lower():
     swfrender = os.path.join(BASE_DIR, 'bin', 'swfrender')
-    NULL = '1>/dev/null 2>/dev/null'
+    NULL = '1>/dev/null 2>&1'
 else:
     raise OSError('操作系统平台不受支持 -> %s' % sys.platform)
 
